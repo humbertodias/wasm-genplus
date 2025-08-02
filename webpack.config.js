@@ -18,7 +18,7 @@ module.exports = {
         new webpack.EnvironmentPlugin({
             'ROM_PATH': 'rom/sonic2.bin',
             'PORT': 9000
-        })
+        }),
     ],
     externals: {
         fs: "empty"
@@ -40,6 +40,17 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env']
+                    }
+                }]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: ['@babel/plugin-proposal-class-properties']
                     }
                 }]
             }
