@@ -82,8 +82,8 @@ add_compile_flags(C
     -DWASM_GENPLUS
 )
 
+
 add_compile_flags(LD
-    "-s DEMANGLE_SUPPORT=1"
     "-s ALLOW_MEMORY_GROWTH=1"
     "-s MODULARIZE=1"
     "-s TOTAL_MEMORY=32MB"
